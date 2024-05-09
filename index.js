@@ -1,4 +1,15 @@
-function largestNumber(nums) {
-  if (nums.every((num) => num === 0)) return "0";
-  return nums.sort((a, b) => `${b}${a}` - `${a}${b}`).join("");
+function countSubstrings(s) {
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    extendPalindrome(i, i);
+    extendPalindrome(i, i + 1);
+  }
+  return count;
+  function extendPalindrome(left, right) {
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+      count++;
+      left--;
+      right++;
+    }
+  }
 }
