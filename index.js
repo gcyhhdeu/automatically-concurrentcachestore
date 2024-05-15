@@ -1,3 +1,6 @@
-// Setup the client
-const aptosConfig = new AptosConfig({ network: APTOS_NETWORK });
-const aptos = new Aptos(aptosConfig);
+const factorialRecursive = (n) => {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorialRecursive(n - 1);
+};
